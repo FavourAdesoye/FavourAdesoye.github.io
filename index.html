@@ -12,21 +12,24 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="myTopnav">
       <a href="#" class="logo">Favour</a>
+      <i class="uil uil-bars" id="menu-icon"></i>
+      
       <nav class="navbar">
-        <a href="#" style="--i: 1" class="active"
+        <a href="#home" style="--i: 1" class="active"
           ><i class="uil uil-estate"></i>Home</a
         >
-        <a href="#" style="--i: 2"><i class="uil uil-user"></i>About</a>
-        <a href="#" style="--i: 3"
+        <a href="#about" style="--i: 2"><i class="uil uil-user"></i>About</a>
+        <a href="#Myskills" style="--i: 3"
           ><i class="uil uil-file-info-alt"></i>Skills</a
         >
-        <a href="#" style="--i: 4"><i class="uil uil-scenery"></i>portfolio</a>
-        <a href="#" style="--i: 5"><i class="uil uil-message"></i>contact</a>
+        <a href="#project" style="--i: 4"><i class="uil uil-scenery"></i>portfolio</a>
+        <a href="#contact" style="--i: 5"><i class="uil uil-message"></i>contact</a>
+       
       </nav>
     </header>
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-content">
         <h3>Hello, its Me</h3>
         <h1>Favour Adesoye</h1>
@@ -37,20 +40,23 @@
           i am currently looking internships to grow my skillset and acquire
           internship
         </p>
-        <div class="right-section">
-          <img src="assests/img/Image.jpeg" alt="Favour's picture " />
-        </div>
+        
         <div class="home-sci">
           <a href="#" style="--i: 6"><i class="uil uil-linkedin"></i></a>
           <a href="#" style="--i: 7"><i class="uil uil-github"></i> </a>
         </div>
-        <a href="#" class="btn-box">More About Me</a>
+        <a href="#" class="btn-box">Resume </a>
+
+        
       </div>
-      <span class="home-imglover"></span>
+      
+      <div class="right-section">
+        <img src="assests/img/IMG-2128.jpg" alt="Favour's picture " />
+      </div>
     </section>
     <section class="about" id="about">
       <div class="about-img">
-        <img src="assests/img/Image.jpeg" alt="" />
+        <img src="assests/img/grid photo.png" alt="" />
       </div>
       <div class="about-text">
         <h2>About <span>Me</span></h2>
@@ -61,16 +67,19 @@
           maxime. Recusandae nam aliquid qui laborum iste ad, necessitatibus ea
           culpa, repellat quas dolorum nihil voluptas quod cum. Magnam.
         </p>
-        <a href="#" class="btn-box"> More About Me</a>
+        <a href="#" class="btn-box">Resume!</a>
       </div>
     </section>
     <!-- skills section -->
 
-    <h1 class="sub-title">My <span>Skills</span></h1>
-    <section>
+    
+    <section  id="Myskills">
+      <h1 id="sub-title" >My <span>Skills</span></h1>
       <div class="container1" id="skills">
-        <h1 class="heading1">Technical Skills</h1>
+        <div class="skills-row">
+          <div class="skills-column">
         <div class="technical-bars">
+          <h2 class="heading1">Technical Skills</h2>
           <div class="bar">
             <i style="color: rgb(180, 19, 19)" class="uil uil-html5"></i>
             <div class="info"><span>HTML</span></div>
@@ -120,9 +129,10 @@
         </div>
       </div>
 
-      <div class="container1">
-        <h1 class="heading1">Professional skills</h1>
+      <div class="skills-column">
         <div class="radial-bars">
+          <h2 class="heading1">Professional skills</h2>
+
           <div class="radial-bar">
             <svg x="0px" y="0px" viewBox="0 0 200 200">
               <circle class="progress-bar" cx="100" cy="100" r="80" />
@@ -157,12 +167,15 @@
           </div>
         </div>
       </div>
+      </div>
+    </div>
     </section>
 
     <!--  project section -->
 
-    <h1 class="sub-title">Latest<span> Projects</span></h1>
-    <section>
+    <section id="Myprojects">
+      <h1 id="sub-title">Latest<span> Projects</span></h1>
+
       <div class="porfolio" id="project"></div>
       <div class="portfolio-container">
         <div class="portfolio-box">
@@ -245,8 +258,12 @@
         </div>
       </div>
     </section>
-    <h2 class="sub-title">Contact<span>Me!</span></h2>
+
+
     <section class="contact" id="contact">
+      <h1 id="sub-title">Contact<span> Me!</span></h2>
+
+<h4 class="sent-notification"></h4>
       <form
       id="contact-form
         action="assests\mail.php"
@@ -264,8 +281,8 @@
           name="message"
           class="form-control"
           id="Message"
-          cols=""
-          rows=""
+          cols="30"
+          rows="10"
           placeholder="Your Message"
         ></textarea>
         <button type="submit" class="form-control submit" >Send</button>
@@ -276,10 +293,55 @@
         <li><i class="uil uil-linkedin"></i> Favour Adesoye</li>
       </div>
     </section>
-    <section>
-      
-    </section>
+    
+    <!--link jquery-->
+<!-- <script src="assests/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function sendEmail(){
+  var name = $("#name");
+  var email = $("#email");
+  var subject = $("email-s");
+  var body= $("#message");
+  
+  if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)){
+    $.ajax({
+      url:"assets/php files/mail.php",
+      method: 'POST',
+      dataType: 'json',
+      data:{
+        name: name.val(),
+        email:email.val(),
+        subject: subject.val(),
+        body:body.val()
+      }, success: function(response){
+        $('#contact-form')[0].reset();
+        $('.sent-notification').text("Message sent successfullt.");
+      }
+    });
+  }
+}
+function isNotEmpty(caller){
+  if(caller.val()==""){
+    caller.css('border', '1px solid red');
+    return false;
+  }
 
+  else{
+    caller.css('border', '');
+    return true;
+  }
+}
+</script> -->
+<!-- <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "header") {
+      x.className += " responsive";
+    } else {
+      x.className = "header";
+    }
+  }
+  </script> -->
     <script src="assests/js/main.js"></script>
   </body>
 </html>
