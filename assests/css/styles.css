@@ -438,7 +438,7 @@ height:100%;
 }
 
 .portfolio-layer h5{
-    font-size: 4rem;
+    font-size: 3rem;
     background-color: #55107a;
 }
 .portfolio-layer p{
@@ -595,7 +595,7 @@ font-weight: 700;
 @media (max-width:991px) { 
     .header{
         padding: 2rem 3%;
-        font-size: 55%;
+        font-size: 65%;
     }
     section{
         padding: 10rem 3% 2rem;
@@ -627,7 +627,7 @@ font-weight: 700;
     }
     .navbar a{
         display:block;
-        font-size: 2rem;
+        font-size: 3rem;
         margin: 3rem 0;
     }
    .home{
