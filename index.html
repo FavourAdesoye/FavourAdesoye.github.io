@@ -10,6 +10,14 @@
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("7kocMkrzuyo0QKadM");
+   })();
+</script>
   </head>
   <body>
     <header class="header" id="myTopnav">
@@ -190,23 +198,23 @@
         <div class="portfolio-box">
           <img src="assests/img/Screenshot 2023-09-17 223444.png" alt="" />
           <div class="portfolio-layer">
-            <h5>Web designer</h5>
+            <h5>Web Developer</h5>
             <p>
-             Created a responsive online portfolio <br>Utilized HTML,CSS,Javascript &PHP
+             Created a responsive online portfolio <br>Utilized HTML,CSS & Javascript
             </p>
             <a target="_blank" href="https://github.com/FavourAdesoye" > <i class="uil uil-external-link-alt"></i></a>
           </div>
         </div>
-        <!-- <div class="portfolio-box">
-          <img src="" alt="" />
+        <div class="portfolio-box">
+          <img src="assests/img/TrojanAlert.png" alt="" />
           <div class="portfolio-layer">
-            <h5>Web designer</h5>
+            <h5>Mobile App Developer</h5>
             <p>
-             Collaborated with a team to develop a website for the Rocketry Team at my school (Trojan Takeoff Team)<br>Utilised HTML,CSS &Javascript.
+             Developed a Mobile Application that serves as a notification system for my University<br>Utilised Andriod Studios, Java, Firebase & Email API .
             </p>
             <a target="_blank" href="https://github.com/FavourAdesoye" > <i class="uil uil-external-link-alt"></i></a>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -214,9 +222,7 @@
     <section class="contact" id="contact">
       <h1 id="sub-title">Contact<span> Me!</span></h2>
       <form
-      id="contact-form
-        action="assests\mail.php"
-        method="POST"
+      id="contact-form"
       >
         <div class="input-box">
           <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required />
@@ -224,7 +230,7 @@
         </div>
         <div class="input-box">
           <input type="text" name="number"  class="form-control"  placeholder="Mobile Number" required />
-          <input type="text" name="email-s" class="form-control" placeholder="Email subject" required />
+          <input type="text" name="email-s" id="subject" class="form-control" placeholder="Email subject" required />
         </div>
         <textarea
           name="message"
@@ -234,7 +240,7 @@
           rows="10"
           placeholder="Your Message"
         ></textarea>
-        <button type="submit" class="form-control submit" >Send</button>
+        <button type="submit" onclick="sendMail()"  class="form-control submit" >Send</button>
       </form>
       <div class="contact-list">
         <li><a href="mailto:someone@example.com"><i class="uil uil-envelope"></i>fade0929@students.vsu.edu</li></a>

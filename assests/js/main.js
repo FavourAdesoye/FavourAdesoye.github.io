@@ -42,3 +42,13 @@ navbar.classList.remove('active');
 }
 
 
+function sendMail(){
+    var params = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        subject : document.getElementById("subject").value,
+        message : document.getElementById("Message").value,
+    }
+
+    emailjs.send("service_qfh2u3c", "template_gd2m1xt", params, "7kocMkrzuyo0QKadM").then(alert("Email Sent!!"))
+}
